@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="layoutUser"
+		template="/WEB-INF/layoutUser/index.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/layoutUser/__header.jsp" />
+		<put-attribute name="navmobile"
+			value="/WEB-INF/layoutUser/__navmobile.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/layoutUser/__footer.jsp" />
+	</definition>
+	<definition name="home/*" extends="layoutUser">
+		<put-attribute name="body"
+			value="/WEB-INF/views/home/{1}.jsp" />
+	</definition>
+
+	<definition name="layoutAdmin"
+		template="/WEB-INF/layoutAdmin/index.jsp">
+		<put-attribute name="sidebarAdmin"
+			value="/WEB-INF/layoutAdmin/__sidebar.jsp" />
+			<put-attribute name="topbarAdmin"
+	value="/WEB-INF/layoutAdmin/__topbar.jsp" />
+		<put-attribute name="bodyAdmin" value="" />
+		
+		<put-attribute name="footerAdmin"
+			value="/WEB-INF/layoutAdmin/__footer.jsp" />
+		<put-attribute name="scrolltopAdmin"
+			value="/WEB-INF/layoutAdmin/__scrolltop.jsp" />
+		<put-attribute name="logoutmodalAdmin"
+			value="/WEB-INF/layoutAdmin/__logoutmodal.jsp" />
+	</definition>
+	<definition name="admin/*" extends="layoutAdmin">
+		<put-attribute name="bodyAdmin"
+			value="/WEB-INF/views/admin/{1}.jsp" />
+	</definition>
+</tiles-definitions>
